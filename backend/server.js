@@ -43,7 +43,7 @@ app.post('/login', (req, res) => {
           return res.status(500).json({ error: error.message });
         }
         if (results.rows.length > 0) {
-          res.json({ message: 'Успешный вход', userId: results.rows[0].id });
+          res.json({ message: 'Успешный вход', user: results.rows[0] });
         } else {
           res.status(401).json({ message: 'Неверный email или пароль' });
         }

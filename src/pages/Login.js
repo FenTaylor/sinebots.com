@@ -28,7 +28,7 @@ function Login() {
       if (!response.ok) {
         throw new Error(data.message || 'Произошла ошибка при входе');
       }
-      setAuth({ user: email, isAuthenticated: true });
+      setAuth({ user: data.user, isAuthenticated: true });
       navigate('/dashboard');
     } catch (error) {
       setError(error.message);
